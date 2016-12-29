@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   
   #students path
   def index
-	@students = Students.all
+	@students = Student.all
   end
   
   def create
