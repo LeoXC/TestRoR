@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
   
-  #students path
+  #TODO: students path
   def index
 	@students = Student.all
   end
@@ -15,8 +15,13 @@ class StudentsController < ApplicationController
     end
   end
 
-  # def new
-  # def show
+  # TODO
+  def new
+  end
+  
+  # TODO
+  def show
+  end
   
   def update
     if student.save
