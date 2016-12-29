@@ -1,7 +1,12 @@
 class StudentsController < ApplicationController
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
-
+  
+  #students path
+  def index
+	@students = Students.all
+  end
+  
   def create
     if student.save
       redirect_to student_path(student), notice: I18n.t('shared.created', resource: 'Student')
@@ -10,6 +15,9 @@ class StudentsController < ApplicationController
     end
   end
 
+  # def new
+  # def show
+  
   def update
     if student.save
       redirect_to student_path(student), notice: I18n.t('shared.updated', resource: 'Student')
