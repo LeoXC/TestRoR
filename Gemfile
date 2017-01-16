@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
-
+#ruby '2.2.3' 
 #ruby '2.3.1'
-#ruby '2.2.6'- works for my local version and for heroku, does not work for Travis
+#- works for my local version and for heroku, does not work for Travis
+ruby '2.2.6'
 
 gem 'rake', '< 11.0'
 gem 'bootstrap-sass'
