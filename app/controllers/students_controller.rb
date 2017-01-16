@@ -1,11 +1,12 @@
 class StudentsController < ApplicationController
+  expose(:students) # added by LZ
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
   
   #TODO: students path
-  def index
-	@students = Student.all
-  end
+  #def index
+  #	@students = Student.all
+  #end
   
   def create
     if student.save
@@ -13,14 +14,6 @@ class StudentsController < ApplicationController
     else
       render :new
     end
-  end
-
-  # TODO
-  def new
-  end
-  
-  # TODO
-  def show
   end
   
   def update
@@ -34,5 +27,11 @@ class StudentsController < ApplicationController
   def destroy
     student.destroy
     redirect_to students_path, notice: I18n.t('shared.deleted', resource: 'Student')
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, subject_item_ids: [])
   end
 end

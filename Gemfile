@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.2.6'
 #ruby '2.3.1'
 #ruby '2.2.6'
 
+gem 'rake', '< 11.0'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-script-source', '1.8.0'
 gem 'decent_exposure'
 gem 'devise'
 gem 'draper'
@@ -52,3 +54,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', require: false
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
