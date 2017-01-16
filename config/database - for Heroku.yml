@@ -1,0 +1,15 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  host:     ec2-54-163-236-33.compute-1.amazonaws.com
+  pool: 5
+  username: nkyfpdpqlqzokf
+  password: f95a0e5920d7493088b611a2f8b550b0194319f7b7579916c59b1707f40943e7
+
+development:
+  <<: *connection
+  database: d8godrf8bh3epu
+
+test: &test
+  <<: *connection
+  database: workshops_test
